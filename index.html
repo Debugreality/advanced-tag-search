@@ -1,6 +1,49 @@
+<!DOCTYPE html>
 <html>
-<head></head>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tag search and add</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="tag-search-add.js"></script>
+    <link type="text/css" href="tag-search.css" rel="stylesheet">
+</head>
 <body>
-<h1>Hi Jai</h1>
+<h1>Vue tag component</h1>
+
+<div id="app">
+    <div>
+        <tag-search v-bind:tags = "tags" v-on:add-tag="addTag($event)"></tag-search>
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            tags: [
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday',
+                'Sunday',
+                'New years day',
+                'April fools day',
+                'Valentines day',
+                'Easter Friday',
+                'Easter Monday',
+                'Peace day',
+                'Fathers day'
+            ]
+        },
+        methods:{
+            addTag:function(tagIn){
+                console.log('Hello we got something ', tagIn);
+                this.tags.push(tagIn);
+            }
+        }
+    })
+</script>
 </body>
 </html>
