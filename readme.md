@@ -1,4 +1,4 @@
-##Advanced tag search vue widget
+## Advanced tag search vue widget
 
 This component allows users to search/select and add tags. 
 
